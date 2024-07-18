@@ -1,4 +1,19 @@
-- name: Upload coverage reports to Codecov
-  uses: codecov/codecov-action@v4.0.1
-  with:
-    token: ${{ secrets.CODECOV_TOKEN }}
+name: PR check
+on: [push, pull_request]
+jobs: 
+  run: 
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2.1.0
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run tests and collect coverages
+        run: yarn test
+
+      - name:  Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          name: codecov-default
+          token: ${{ secrets.CODECOV_TOKEN }}
