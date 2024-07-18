@@ -5,10 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Install dependencies
-        run: npm run install
+        run: yarn install
 
       - name: Run tests and collect coverages
-        run: npm run test
+        run: yarn test
 
       - name:  Upload coverage reports to Codecov
         uses: ./
