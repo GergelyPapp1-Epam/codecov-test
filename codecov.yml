@@ -1,0 +1,6 @@
+name: 'Codecov'
+description: 'GitHub Action that uploads coverage reports for your repository to codecov.io'
+inputs:
+  token:
+    description: 'Repository Codecov token. Used to authorize report uploads'
+    required: false
