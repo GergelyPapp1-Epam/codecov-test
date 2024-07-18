@@ -4,12 +4,11 @@ jobs:
   run: 
     runs-on: ubuntu-latest
     steps: 
+      - name: Install dependencies
+        run: yarn install
+      - name: Run tests and collect coverage
+        run: yarn test
       - name:  Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
-          # fail_ci_if_error: true
-          file: /codecov/coverage/coverage-final.json
-          flags: codecov-react
-          name: codecov-coverage-react
-          # verbose: true
           token: ${{ secrets.CODECOV_TOKEN }}
