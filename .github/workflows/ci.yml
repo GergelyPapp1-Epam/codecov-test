@@ -4,10 +4,6 @@ jobs:
   run: 
     runs-on: [mac-os-latest, ubuntu-latest, windows-latest]
     steps: 
-      - name: Install dependencies
-        run: yarn install
-      - name: Run tests and collect coverage
-        run: yarn test
       - name:  Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
