@@ -8,7 +8,6 @@ jobs:
         uses: codecov/codecov-action@v4.0.1
         with:
           fail_ci_if_error: true
-          files: ./coverage/calculator/coverage-final.json,./coverage/coverage-test/coverage-final.json
           file: ./coverage/coverage-final.json
           flags: codecov-react
           name: codecov-coverage-react
