@@ -1,6 +1,15 @@
-name: 'Codecov'
-description: 'GitHub Action that uploads coverage reports for your repository to codecov.io'
-inputs:
-  token:
-    description: 'Repository Codecov token. Used to authorize report uploads'
-    required: false
+name: PR check
+on: [push, pull_request]
+jobs: 
+  run: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name:  Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          fail_ci_if_error: true
+          file: ./coverage/coverage-final.json
+          flags: codecov-react
+          name: codecov-coverage-react
+          verbose: true
+          token: ${{ secrets.CODECOV_TOKEN }}
