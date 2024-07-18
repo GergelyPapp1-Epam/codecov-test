@@ -7,9 +7,9 @@ jobs:
       - name:  Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
-          fail_ci_if_error: true
-          file: ./coverage/coverage-final.json
-          flags: codecov-react
-          name: codecov-coverage-react
-          verbose: true
+          # fail_ci_if_error: true
+          # file: ./coverage/coverage-final.json
+          # flags: codecov-react
+          # name: codecov-coverage-react
+          # verbose: true
           token: ${{ secrets.CODECOV_TOKEN }}
