@@ -2,7 +2,7 @@ name: PR check
 on: [push, pull_request]
 jobs: 
   run: 
-    runs-on: [mac-os-latest, ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     steps: 
       - name:  Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
