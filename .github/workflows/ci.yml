@@ -5,12 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Install dependencies
-        run: yarn install
+        run: npm run install
 
       - name: Run tests and collect coverages
-        run: yarn test
+        run: npm run test
 
       - name:  Upload coverage reports to Codecov
         uses: ./
         with:
+          files: ./coverage/coverage-final.json
+          name: codecov-default
           token: ${{ secrets.CODECOV_TOKEN }}
